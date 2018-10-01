@@ -14,7 +14,7 @@ client.on('message', async (msg) => {
 
 		case "help":
 
-			const embed = new Discord.RichEmbed()
+			const embed = new { Client }.RichEmbed()
 				.setColor("GREEN")
 				.setTitle(":symbols: Command list!")
 				.addBlankField(true)
@@ -35,7 +35,7 @@ client.on('message', async (msg) => {
 
 		case "info":
 
-			const embed = new Discord.RichEmbed()
+			const embed = new { Client }.RichEmbed()
 			.setColor("BLUE")
 			.setTitle("Detailed Informations")
 			.addBlankField(true)
