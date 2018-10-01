@@ -10,9 +10,27 @@ client.on('message', async (msg) => {
   const command = args.shift().slice(prefix.length);
   //Add your commands here. Good command handlers are overrated :POGGERS:
   
-  if(command === 'ping'){
-    const m = await msg.channel.send('Pinging...');
-    m.edit(`Ponggers! Client ping: \`${m.createdTimestamp - msg.createdTimestamp}\`ms. Heartbeat ping: \`${client.ping}\`ms`);
+  switch(command){
+
+  	case "ping":
+
+    	const m = await msg.channel.send('Pinging...');
+    	m.edit(`Ponggers! Client ping: \`${m.createdTimestamp - msg.createdTimestamp}\`ms. Heartbeat ping: \`${client.ping}\`ms`);\
+    	
+    	break;
+
+    case "info":
+    	var embed = new Discord.RichEmbed()
+			.setColor("BLUE")
+			.setTitle("Detailed Informations")
+			.addBlankField(true)
+			.addBlankField(true)
+			.setImage("https://pbs.twimg.com/profile_images/1042878305874128896/McCIWyzX_400x400.jpg")
+			.addField("Bot's name","hacktoberfest-discord-bot",true)
+		message.channel.send(embed);
+
+		break;
+
   }
   
 })
