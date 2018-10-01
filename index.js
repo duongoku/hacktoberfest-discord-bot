@@ -12,6 +12,20 @@ client.on('message', async (msg) => {
 
 	switch(command){
 
+		case "help":
+
+			const embed = new Discord.RichEmbed()
+				.setColor("GREEN")
+				.setTitle(":symbols: Command list!")
+				.addBlankField(true)
+				.addField("hack!ping","Just pinging the bot xD",true)
+				.addBlankField(true)
+				.addField("hack!info","This bot's info",true)
+
+			message.channel.send(embed);
+
+			break;
+
 		case "ping":
 
 			const m = await msg.channel.send('Pinging...');
@@ -31,6 +45,10 @@ client.on('message', async (msg) => {
 			message.channel.send(embed);
 			
 			break;
+
+		default:
+		
+	    	message.channel.send(":negative_squared_cross_mark: Invalid Command!");
 
 	}
 })
